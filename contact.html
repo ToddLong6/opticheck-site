@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — ColeHart Enterprises</title>
+<meta name="description" content="Connect with ColeHart Enterprises. Consulting inquiries, government contracting, teaming opportunities, and OptiCheck support.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%231e6fa8'/><text x='50%' y='50%' dominant-baseline='central' text-anchor='middle' font-family='Georgia,serif' font-weight='700' font-size='18' fill='white'>C</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NYGXGHXY8R"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-NYGXGHXY8R');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <a href="/" class="nav-logo">
+    <div class="nav-logo-mark">C</div>
+    <div>
+      <div class="nav-logo-text">ColeHart Enterprises</div>
+      <span class="nav-logo-sub">Veteran-Owned · SDVOSB</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li class="has-dropdown">
+      <a href="/about/our-story.html">About <span class="caret">▾</span></a>
+      <div class="dropdown">
+        <a href="/about/our-story.html">Our Story</a>
+        <a href="/about/leadership.html">Leadership</a>
+        <a href="/about/values.html">Our Values</a>
+      </div>
+    </li>
+    <li class="has-dropdown">
+      <a href="/services/consulting.html">Services <span class="caret">▾</span></a>
+      <div class="dropdown">
+        <a href="/services/consulting.html">ColeHart Consulting</a>
+        <a href="/services/technology.html">ColeHart Technology</a>
+        <a href="/services/academy.html">ColeHart Academy</a>
+      </div>
+    </li>
+    <li class="has-dropdown">
+      <a href="/government/capability.html">Government <span class="caret">▾</span></a>
+      <div class="dropdown">
+        <a href="/government/capability.html">Capability Statement</a>
+        <a href="/government/sdvosb.html">SDVOSB / Veteran-Owned</a>
+        <a href="/government/naics.html">NAICS &amp; Contract Vehicles</a>
+      </div>
+    </li>
+    <li class="has-dropdown">
+      <a href="/solutions/opticheck.html">Solutions <span class="caret">▾</span></a>
+      <div class="dropdown"><a href="/solutions/opticheck.html">OptiCheck</a></div>
+    </li>
+    <li><a href="/insights.html">Insights</a></li>
+    <li><a href="/contact.html" class="active">Contact</a></li>
+  </ul>
+  <a href="/contact.html" class="nav-cta" style="background:var(--accent2);">Start a Conversation →</a>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="mobile-nav" id="mobile-nav">
+  <div class="mobile-nav-group">
+    <div class="mobile-nav-label">About</div>
+    <a href="/about/our-story.html" class="indent" onclick="closeMenu()">Our Story</a>
+    <a href="/about/leadership.html" class="indent" onclick="closeMenu()">Leadership</a>
+    <a href="/about/values.html" class="indent" onclick="closeMenu()">Our Values</a>
+  </div>
+  <div class="mobile-nav-group">
+    <div class="mobile-nav-label">Services</div>
+    <a href="/services/consulting.html" class="indent" onclick="closeMenu()">ColeHart Consulting</a>
+    <a href="/services/technology.html" class="indent" onclick="closeMenu()">ColeHart Technology</a>
+    <a href="/services/academy.html" class="indent" onclick="closeMenu()">ColeHart Academy</a>
+  </div>
+  <div class="mobile-nav-group">
+    <div class="mobile-nav-label">Government</div>
+    <a href="/government/capability.html" class="indent" onclick="closeMenu()">Capability Statement</a>
+    <a href="/government/sdvosb.html" class="indent" onclick="closeMenu()">SDVOSB / Veteran-Owned</a>
+    <a href="/government/naics.html" class="indent" onclick="closeMenu()">NAICS &amp; Contract Vehicles</a>
+  </div>
+  <div class="mobile-nav-group">
+    <div class="mobile-nav-label">Solutions</div>
+    <a href="/solutions/opticheck.html" class="indent" onclick="closeMenu()">OptiCheck</a>
+  </div>
+  <a href="/insights.html" onclick="closeMenu()">Insights</a>
+  <a href="/contact.html" onclick="closeMenu()">Contact</a>
+  <a href="/contact.html" class="mobile-nav-cta" onclick="closeMenu()">Start a Conversation →</a>
+</div>
+
+<!-- ── PAGE HERO ── -->
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div class="page-hero-eyebrow">Get in Touch</div>
+    <h1>Let's start a conversation.</h1>
+    <p class="page-hero-sub">Whether you're exploring a consulting engagement, a teaming opportunity, or have questions about OptiCheck — we respond to all inquiries within 1–2 business days.</p>
+  </div>
+</section>
+
+<!-- ── CONTACT FORM ── -->
+<section class="contact-form">
+  <div class="contact-form-inner">
+    <span class="sec-label">Send a Message</span>
+    <h2 class="sec-h2" style="margin-bottom:8px;">Tell us about your needs.</h2>
+    <p style="font-size:14px;color:var(--text2);margin-bottom:0;">Select an inquiry type below so we can route your message to the right person.</p>
+
+    <form class="form" id="contact-form" onsubmit="handleContact(event)">
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label" for="full-name">Full Name</label>
+          <input class="form-input" type="text" id="full-name" name="full-name" placeholder="Jane Smith" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="email">Email Address</label>
+          <input class="form-input" type="email" id="email" name="email" placeholder="jane@agency.gov" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label" for="organization">Organization</label>
+          <input class="form-input" type="text" id="organization" name="organization" placeholder="Your agency or company">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="inquiry-type">Inquiry Type</label>
+          <select class="form-select" id="inquiry-type" name="inquiry-type" required>
+            <option value="">Select one…</option>
+            <option value="general">General Inquiry</option>
+            <option value="consulting">Consulting Services</option>
+            <option value="government">Government Contracting</option>
+            <option value="teaming">Teaming Opportunity</option>
+            <option value="opticheck">OptiCheck</option>
+            <option value="academy">ColeHart Academy</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="message">Message</label>
+        <textarea class="form-textarea" id="message" name="message" placeholder="Tell us about your organization and what you're looking for…" required></textarea>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="how-heard">How did you hear about us? <span style="font-weight:400;text-transform:none;letter-spacing:0;color:var(--gray2);">(optional)</span></label>
+        <input class="form-input" type="text" id="how-heard" name="how-heard" placeholder="LinkedIn, referral, web search…">
+      </div>
+      <button type="submit" class="form-submit">Send Message →</button>
+    </form>
+
+    <div id="contact-success" style="display:none;background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.25);border-radius:14px;padding:28px;margin-top:32px;text-align:center;">
+      <div style="font-size:28px;margin-bottom:12px;">✦</div>
+      <div style="font-size:17px;font-weight:600;color:var(--navy2);margin-bottom:6px;">Message received.</div>
+      <p style="font-size:14px;color:var(--text2);">We'll respond within 1–2 business days. For urgent inquiries, email us directly at <a href="mailto:info@colehartenterprises.com" style="color:var(--accent);">info@colehartenterprises.com</a>.</p>
+    </div>
+
+    <!-- DIRECT CONTACT -->
+    <div class="contact-cards">
+      <div class="contact-card">
+        <div class="contact-lbl">Email</div>
+        <div class="contact-val"><a href="mailto:info@colehartenterprises.com">info@colehartenterprises.com</a></div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-lbl">Response Time</div>
+        <div class="contact-val">1–2 business days</div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-lbl">Website</div>
+        <div class="contact-val"><a href="https://www.colehartenterprises.com" target="_blank">www.colehartenterprises.com</a></div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-lbl">LinkedIn</div>
+        <div class="contact-val"><a href="https://www.linkedin.com/company/colehart-enterprises-llc" target="_blank">ColeHart Enterprises LLC</a></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── TEAMING CTA ── -->
+<section class="content-section dark">
+  <div class="content-section-inner" style="max-width:640px;text-align:center;">
+    <span class="sec-label" style="color:var(--accent3);">Prime Contractors</span>
+    <h2 class="sec-h2" style="color:white;margin-bottom:16px;">Looking to add SDVOSB capability to your team?</h2>
+    <p style="font-size:15px;font-weight:300;color:rgba(255,255,255,0.5);line-height:1.75;margin-bottom:0;">Select <strong style="color:rgba(255,255,255,0.7);">"Teaming Opportunity"</strong> in the inquiry dropdown above — or email us directly at <a href="mailto:info@colehartenterprises.com" style="color:var(--accent3);">info@colehartenterprises.com</a>.</p>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-copy">© 2026 ColeHart Enterprises LLC · Spartanburg, SC &amp; Austin, TX</div>
+  <div class="footer-links">
+    <a href="/about/our-story.html">About</a>
+    <a href="/services/consulting.html">Services</a>
+    <a href="/government/capability.html">Government</a>
+    <a href="/solutions/opticheck.html">Solutions</a>
+    <a href="/insights.html">Insights</a>
+    <a href="/contact.html">Contact</a>
+    <a href="/privacy.html">Privacy Policy</a>
+    <a href="/terms.html">Terms</a>
+  </div>
+</footer>
+
+<script>
+  function handleContact(e) {
+    e.preventDefault();
+    document.getElementById('contact-form').style.display = 'none';
+    document.getElementById('contact-success').style.display = 'block';
+  }
+  function toggleMenu(){document.getElementById('mobile-nav').classList.toggle('open')}
+  function closeMenu(){document.getElementById('mobile-nav').classList.remove('open')}
+  document.addEventListener('click',function(e){
+    const menu=document.getElementById('mobile-nav');const btn=document.querySelector('.hamburger');
+    if(menu.classList.contains('open')&&!menu.contains(e.target)&&!btn.contains(e.target)){closeMenu()}
+  })
+</script>
+</body>
+</html>

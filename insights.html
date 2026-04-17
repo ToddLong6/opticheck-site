@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insights — ColeHart Enterprises</title>
+<meta name="description" content="Resources, guides, and perspectives from the ColeHart team on government contracting, federal infrastructure, operations, and AI adoption.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%231e6fa8'/><text x='50%' y='50%' dominant-baseline='central' text-anchor='middle' font-family='Georgia,serif' font-weight='700' font-size='18' fill='white'>C</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NYGXGHXY8R"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-NYGXGHXY8R');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <a href="/" class="nav-logo">
+    <div class="nav-logo-mark">C</div>
+    <div>
+      <div class="nav-logo-text">ColeHart Enterprises</div>
+      <span class="nav-logo-sub">Veteran-Owned · SDVOSB</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li class="has-dropdown">
+      <a href="/about/our-story.html">About <span class="caret">▾</span></a>
+      <div class="dropdown">
+        <a href="/about/our-story.html">Our Story</a>
+        <a href="/about/leadership.html">Leadership</a>
+        <a href="/about/values.html">Our Values</a>
+      </div>
+    </li>
+    <li class="has-dropdown">
+      <a href="/services/consulting.html">Services <span class="caret">▾</span></a>
+      <div class="dropdown">
+        <a href="/services/consulting.html">ColeHart Consulting</a>
+        <a href="/services/technology.html">ColeHart Technology</a>
+        <a href="/services/academy.html">ColeHart Academy</a>
+      </div>
+    </li>
+    <li class="has-dropdown">
+      <a href="/government/capability.html">Government <span class="caret">▾</span></a>
+      <div class="dropdown">
+        <a href="/government/capability.html">Capability Statement</a>
+        <a href="/government/sdvosb.html">SDVOSB / Veteran-Owned</a>
+        <a href="/government/naics.html">NAICS &amp; Contract Vehicles</a>
+      </div>
+    </li>
+    <li class="has-dropdown">
+      <a href="/solutions/opticheck.html">Solutions <span class="caret">▾</span></a>
+      <div class="dropdown"><a href="/solutions/opticheck.html">OptiCheck</a></div>
+    </li>
+    <li><a href="/insights.html" class="active">Insights</a></li>
+    <li><a href="/contact.html">Contact</a></li>
+  </ul>
+  <a href="/contact.html" class="nav-cta">Start a Conversation →</a>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="mobile-nav" id="mobile-nav">
+  <div class="mobile-nav-group">
+    <div class="mobile-nav-label">About</div>
+    <a href="/about/our-story.html" class="indent" onclick="closeMenu()">Our Story</a>
+    <a href="/about/leadership.html" class="indent" onclick="closeMenu()">Leadership</a>
+    <a href="/about/values.html" class="indent" onclick="closeMenu()">Our Values</a>
+  </div>
+  <div class="mobile-nav-group">
+    <div class="mobile-nav-label">Services</div>
+    <a href="/services/consulting.html" class="indent" onclick="closeMenu()">ColeHart Consulting</a>
+    <a href="/services/technology.html" class="indent" onclick="closeMenu()">ColeHart Technology</a>
+    <a href="/services/academy.html" class="indent" onclick="closeMenu()">ColeHart Academy</a>
+  </div>
+  <div class="mobile-nav-group">
+    <div class="mobile-nav-label">Government</div>
+    <a href="/government/capability.html" class="indent" onclick="closeMenu()">Capability Statement</a>
+    <a href="/government/sdvosb.html" class="indent" onclick="closeMenu()">SDVOSB / Veteran-Owned</a>
+    <a href="/government/naics.html" class="indent" onclick="closeMenu()">NAICS &amp; Contract Vehicles</a>
+  </div>
+  <div class="mobile-nav-group">
+    <div class="mobile-nav-label">Solutions</div>
+    <a href="/solutions/opticheck.html" class="indent" onclick="closeMenu()">OptiCheck</a>
+  </div>
+  <a href="/insights.html" onclick="closeMenu()">Insights</a>
+  <a href="/contact.html" onclick="closeMenu()">Contact</a>
+  <a href="/contact.html" class="mobile-nav-cta" onclick="closeMenu()">Start a Conversation →</a>
+</div>
+
+<!-- ── PAGE HERO ── -->
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div class="page-hero-eyebrow">Resources &amp; Perspectives</div>
+    <h1>Insights from the field.</h1>
+    <p class="page-hero-sub">Practical guides and perspectives on government contracting, federal infrastructure, operations systems, and AI adoption — written by practitioners for practitioners.</p>
+  </div>
+</section>
+
+<!-- ── LEAD MAGNET ── -->
+<section class="content-section">
+  <div class="content-section-inner">
+    <div class="lead-magnet">
+      <div class="lead-magnet-icon">📘</div>
+      <div style="flex:1;">
+        <h3>The Small Business Government Contracting Starter Guide</h3>
+        <p>Everything you need to go from "I want to work with the government" to an active SAM.gov registration, a capability statement, and a strategy for finding your first opportunity. Free download.</p>
+        <form class="lead-magnet-form" onsubmit="handleGuide(event)">
+          <input type="email" placeholder="Enter your email to download" required>
+          <button type="submit">Download Free →</button>
+        </form>
+        <div id="guide-success" style="display:none;font-size:13px;color:var(--accent3);margin-top:12px;">✦ Check your inbox — the guide is on its way.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── INSIGHTS GRID ── -->
+<section class="content-section alt">
+  <div class="content-section-inner">
+    <div class="sec-head" style="text-align:left;margin-bottom:40px;">
+      <span class="sec-label">Coming Soon</span>
+      <h2 class="sec-h2">Articles launching soon.</h2>
+      <p class="sec-sub" style="margin:12px 0 0;text-align:left;">We publish 2–4 practical guides and perspectives per month. Content in development includes:</p>
+    </div>
+    <div class="insights-grid">
+      <div class="insight-card">
+        <div class="insight-thumb">🏛️</div>
+        <div class="insight-body">
+          <div class="insight-tag">Government Contracting</div>
+          <div class="insight-title">How to Register on SAM.gov and Not Mess It Up</div>
+          <p class="insight-desc">A step-by-step walkthrough of the SAM.gov registration process — what fields matter, what to avoid, and how to verify your SDVOSB status.</p>
+        </div>
+      </div>
+      <div class="insight-card">
+        <div class="insight-thumb">🤖</div>
+        <div class="insight-body">
+          <div class="insight-tag">AI &amp; Operations</div>
+          <div class="insight-title">When to Use AI in Federal Operations — and When Not To</div>
+          <p class="insight-desc">A practical framework for evaluating AI adoption in government and enterprise environments, with real examples of where it helps and where it doesn't.</p>
+        </div>
+      </div>
+      <div class="insight-card">
+        <div class="insight-thumb">📋</div>
+        <div class="insight-body">
+          <div class="insight-tag">Program Management</div>
+          <div class="insight-title">The 5 Risk Categories Every Federal PM Needs to Track</div>
+          <p class="insight-desc">The risk framework we use in every consulting engagement — simplified and explained for program managers working in federal infrastructure.</p>
+        </div>
+      </div>
+      <div class="insight-card">
+        <div class="insight-thumb">🎖️</div>
+        <div class="insight-body">
+          <div class="insight-tag">Veteran Business</div>
+          <div class="insight-title">Building a Government Contracting Business as a Veteran</div>
+          <p class="insight-desc">What SDVOSB certification gets you, what it doesn't, and how to build real capability alongside the designation.</p>
+        </div>
+      </div>
+      <div class="insight-card">
+        <div class="insight-thumb">🔒</div>
+        <div class="insight-body">
+          <div class="insight-tag">Cybersecurity</div>
+          <div class="insight-title">CMMC Readiness: What Small Businesses Actually Need to Know</div>
+          <p class="insight-desc">Cutting through the confusion around CMMC requirements for small DoD contractors — what applies to you and where to start.</p>
+        </div>
+      </div>
+      <div class="insight-card">
+        <div class="insight-thumb">⚙️</div>
+        <div class="insight-body">
+          <div class="insight-tag">Operations</div>
+          <div class="insight-title">How to Run an Operational Assessment Without a Consultant</div>
+          <p class="insight-desc">The same diagnostic framework we use in engagements — adapted into a self-guided process your team can run internally.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section class="cta-band">
+  <div class="cta-inner">
+    <h2>Want these delivered to your inbox?</h2>
+    <p>Join the list. We publish practical guides for government contractors and operations professionals — no fluff.</p>
+    <form style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:0;" onsubmit="handleInsightSub(event)">
+      <input type="email" placeholder="Enter your email" required style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.2);border-radius:10px;padding:14px 20px;font-size:14px;color:white;font-family:inherit;min-width:260px;">
+      <button type="submit" class="btn-primary" style="border:none;cursor:pointer;">Subscribe →</button>
+    </form>
+    <div id="insight-sub-success" style="display:none;font-size:14px;color:var(--accent3);margin-top:16px;">✦ You're subscribed. New guides coming soon.</div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-copy">© 2026 ColeHart Enterprises LLC · Spartanburg, SC &amp; Austin, TX</div>
+  <div class="footer-links">
+    <a href="/about/our-story.html">About</a>
+    <a href="/services/consulting.html">Services</a>
+    <a href="/government/capability.html">Government</a>
+    <a href="/solutions/opticheck.html">Solutions</a>
+    <a href="/insights.html">Insights</a>
+    <a href="/contact.html">Contact</a>
+    <a href="/privacy.html">Privacy Policy</a>
+    <a href="/terms.html">Terms</a>
+  </div>
+</footer>
+
+<script>
+  function handleGuide(e){e.preventDefault();e.target.style.display='none';document.getElementById('guide-success').style.display='block';}
+  function handleInsightSub(e){e.preventDefault();e.target.style.display='none';document.getElementById('insight-sub-success').style.display='block';}
+  function toggleMenu(){document.getElementById('mobile-nav').classList.toggle('open')}
+  function closeMenu(){document.getElementById('mobile-nav').classList.remove('open')}
+  document.addEventListener('click',function(e){
+    const menu=document.getElementById('mobile-nav');const btn=document.querySelector('.hamburger');
+    if(menu.classList.contains('open')&&!menu.contains(e.target)&&!btn.contains(e.target)){closeMenu()}
+  })
+</script>
+</body>
+</html>
