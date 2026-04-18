@@ -42,8 +42,14 @@ nav {
   display: flex; align-items: center; justify-content: center;
   font-family: var(--fh); font-weight: 700; color: white; font-size: 17px;
 }
+.nav-logo-img  { height: 36px; width: auto; display: block; }
 .nav-logo-text { font-size: 16px; font-weight: 600; color: white; }
 .nav-logo-sub  { font-size: 10px; color: rgba(255,255,255,0.3); display: block; margin-top: 1px; }
+
+/* ── LOGO PLACEMENTS ── */
+.logo-hero  { max-width: 280px; width: 100%; height: auto; display: block; }
+.logo-footer { height: 28px; width: auto; display: block; filter: brightness(0) invert(1); opacity: 0.55; }
+.logo-print { max-width: 220px; width: 100%; height: auto; display: block; }
 .nav-links { display: flex; gap: 4px; list-style: none; align-items: center; }
 .nav-links > li { position: relative; }
 .nav-links > li > a {
@@ -735,6 +741,7 @@ footer {
   display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;
   border-top: 1px solid rgba(255,255,255,0.06);
 }
+.footer-brand { display: flex; flex-direction: column; gap: 8px; }
 .footer-copy  { font-size: 13px; color: rgba(255,255,255,0.2); }
 .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
 .footer-links a { font-size: 13px; color: rgba(255,255,255,0.3); text-decoration: none; transition: color 0.2s; }
@@ -887,6 +894,7 @@ footer {
   .service-item { flex-direction: column; }
 
   .cta-band { padding: 64px 20px; }
-  footer { padding: 24px 20px; flex-direction: column; text-align: center; }
+  footer { padding: 24px 20px; flex-direction: column; text-align: center; align-items: center; }
+  .footer-brand { align-items: center; }
   .footer-links { justify-content: center; }
 }
