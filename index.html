@@ -189,6 +189,40 @@
   </div>
 </section>
 
+<!-- ── TESTIMONIALS ── -->
+<section class="testimonials">
+  <div class="testimonials-inner">
+    <span class="sec-label">Client Feedback</span>
+    <h2 class="sec-h2">What our clients have to say.</h2>
+    <div class="testi-carousel">
+      <button class="testi-arrow" id="testi-prev" aria-label="Previous testimonial">&#8592;</button>
+      <div class="testi-viewport">
+
+        <div class="testi-slide active">
+          <p class="testi-quote">"It quickly became clear that ColeHart understood our operational environment — not just the theory. They delivered a structured assessment that our team could actually act on."</p>
+          <div class="testi-author">Program Manager</div>
+          <div class="testi-company">Federal Infrastructure Program</div>
+        </div>
+
+        <div class="testi-slide">
+          <p class="testi-quote">"The OptiCheck analysis surfaced workflow gaps we'd been working around for years. Having it laid out with clear recommendations made the case for change internally."</p>
+          <div class="testi-author">Operations Director</div>
+          <div class="testi-company">Enterprise Organization</div>
+        </div>
+
+        <div class="testi-slide">
+          <p class="testi-quote">"ColeHart brought veteran discipline and real technical depth to the engagement. That combination — rare in this space — is exactly what a complex modernization effort requires."</p>
+          <div class="testi-author">Contracting Officer</div>
+          <div class="testi-company">Government Agency</div>
+        </div>
+
+      </div>
+      <button class="testi-arrow" id="testi-next" aria-label="Next testimonial">&#8594;</button>
+    </div>
+    <div class="testi-dots" id="testi-dots"></div>
+  </div>
+</section>
+
 <!-- ── OPTICHECK SPOTLIGHT ── -->
 <section class="opticheck-spotlight">
   <div class="opticheck-spotlight-inner">
@@ -266,6 +300,39 @@
       closeMenu()
     }
   })
+
+  // Testimonials carousel
+  ;(function() {
+    var slides = document.querySelectorAll('.testi-slide')
+    var dotsEl = document.getElementById('testi-dots')
+    var current = 0, timer
+
+    slides.forEach(function(_, i) {
+      var d = document.createElement('button')
+      d.className = 'testi-dot' + (i === 0 ? ' active' : '')
+      d.setAttribute('aria-label', 'Testimonial ' + (i + 1))
+      d.addEventListener('click', function() { goTo(i) })
+      dotsEl.appendChild(d)
+    })
+
+    function goTo(n) {
+      slides[current].classList.remove('active')
+      dotsEl.children[current].classList.remove('active')
+      current = (n + slides.length) % slides.length
+      slides[current].classList.add('active')
+      dotsEl.children[current].classList.add('active')
+      resetTimer()
+    }
+
+    function resetTimer() {
+      clearInterval(timer)
+      timer = setInterval(function() { goTo(current + 1) }, 5000)
+    }
+
+    document.getElementById('testi-prev').addEventListener('click', function() { goTo(current - 1) })
+    document.getElementById('testi-next').addEventListener('click', function() { goTo(current + 1) })
+    resetTimer()
+  })()
 </script>
 </body>
 </html>
