@@ -741,65 +741,6 @@ footer {
 .footer-links a:hover { color: var(--accent3); }
 
 
-/* ── RESPONSIVE ── */
-@media (max-width: 900px) {
-  nav { padding: 14px 20px; }
-  .nav-links, .nav-cta { display: none; }
-  .hamburger { display: flex; }
-
-  .hero { padding: 96px 20px 60px; }
-  .hero-inner { grid-template-columns: 1fr; gap: 48px; }
-  .mockup { animation: none; }
-
-  .page-hero { padding: 108px 20px 56px; }
-
-  .stats { padding: 22px 20px; gap: 28px; }
-
-  .divisions { padding: 56px 20px; }
-  .divisions-grid { grid-template-columns: 1fr; }
-
-  .serve { padding: 56px 20px; }
-
-  .opticheck-spotlight { padding: 56px 20px; }
-  .opticheck-spotlight-inner { grid-template-columns: 1fr; }
-  .spotlight-visual { display: none; }
-
-  .values-anchor { padding: 56px 20px; }
-  .values-anchor blockquote { padding: 0 0 0 32px; }
-
-  .trust-bar { padding: 32px 20px; gap: 20px; }
-
-  .content-section { padding: 56px 20px; }
-
-  .how { padding: 64px 20px; }
-  .how-grid { grid-template-columns: 1fr; }
-
-  .report { padding: 64px 20px; }
-  .report-inner { grid-template-columns: 1fr; }
-
-  .pricing { padding: 64px 20px; }
-  .tier-grid { grid-template-columns: 1fr; }
-  .free-banner { flex-direction: column; align-items: flex-start; }
-
-  .testi { padding: 64px 20px; }
-  .testi-grid { grid-template-columns: 1fr; }
-
-  .testimonials { padding: 64px 20px; }
-  .testi-quote  { font-size: 17px; }
-  .testi-arrow  { display: none; }
-
-  .team { padding: 64px 20px; }
-  .team-grid { grid-template-columns: 1fr; }
-
-  .faq { padding: 64px 20px; }
-
-  .contact-form { padding: 56px 20px; }
-  .contact-cards { grid-template-columns: 1fr; }
-  .form-row { grid-template-columns: 1fr; }
-
-  .values-grid { grid-template-columns: 1fr; }
-  .naics-grid  { grid-template-columns: 1fr; }
-
 /* ── TESTIMONIALS ── */
 .testimonials {
   padding: 96px 56px;
@@ -879,6 +820,66 @@ footer {
   transition: background 0.2s;
 }
 .testi-dot.active { background: var(--accent); }
+
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  nav { padding: 14px 20px; }
+  .nav-links, .nav-cta { display: none; }
+  .hamburger { display: flex; }
+
+  .hero { padding: 96px 20px 60px; }
+  .hero-inner { grid-template-columns: 1fr; gap: 48px; }
+  .mockup { animation: none; }
+
+  .page-hero { padding: 108px 20px 56px; }
+
+  .stats { padding: 22px 20px; gap: 28px; }
+
+  .divisions { padding: 56px 20px; }
+  .divisions-grid { grid-template-columns: 1fr; }
+
+  .serve { padding: 56px 20px; }
+
+  .opticheck-spotlight { padding: 56px 20px; }
+  .opticheck-spotlight-inner { grid-template-columns: 1fr; }
+  .spotlight-visual { display: none; }
+
+  .values-anchor { padding: 56px 20px; }
+  .values-anchor blockquote { padding: 0 0 0 32px; }
+
+  .trust-bar { padding: 32px 20px; gap: 20px; }
+
+  .content-section { padding: 56px 20px; }
+
+  .how { padding: 64px 20px; }
+  .how-grid { grid-template-columns: 1fr; }
+
+  .report { padding: 64px 20px; }
+  .report-inner { grid-template-columns: 1fr; }
+
+  .pricing { padding: 64px 20px; }
+  .tier-grid { grid-template-columns: 1fr; }
+  .free-banner { flex-direction: column; align-items: flex-start; }
+
+  .testi { padding: 64px 20px; }
+  .testi-grid { grid-template-columns: 1fr; }
+
+  .testimonials { padding: 64px 20px; }
+  .testi-quote  { font-size: 17px; }
+  .testi-arrow  { display: none; }
+
+  .team { padding: 64px 20px; }
+  .team-grid { grid-template-columns: 1fr; }
+
+  .faq { padding: 64px 20px; }
+
+  .contact-form { padding: 56px 20px; }
+  .contact-cards { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+
+  .values-grid { grid-template-columns: 1fr; }
+  .naics-grid  { grid-template-columns: 1fr; }
 
   .insights-grid { grid-template-columns: 1fr; }
   .lead-magnet { padding: 32px 24px; }
