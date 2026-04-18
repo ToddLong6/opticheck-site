@@ -91,17 +91,36 @@
     <h2 class="sec-h2" style="margin-bottom:8px;">Tell us about your needs.</h2>
     <p style="font-size:14px;color:var(--text2);margin-bottom:0;">Select an inquiry type below so we can route your message to the right person.</p>
 
-    <form class="form" id="contact-form" onsubmit="handleContact(event)">
+    <!-- FORMSPREE: go to formspree.io, create a free account, create a new form,
+         then replace YOUR_FORM_ID below with your actual form ID (e.g. xyzabcde) -->
+    <form class="form" id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+
       <div class="form-row">
         <div class="form-group">
           <label class="form-label" for="full-name">Full Name</label>
-          <input class="form-input" type="text" id="full-name" name="full-name" placeholder="Jane Smith" required>
+          <input class="form-input" type="text" id="full-name" name="name" placeholder="Jane Smith" required>
         </div>
         <div class="form-group">
           <label class="form-label" for="email">Email Address</label>
           <input class="form-input" type="email" id="email" name="email" placeholder="jane@agency.gov" required>
         </div>
       </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label" for="phone">Phone Number <span style="font-weight:400;text-transform:none;letter-spacing:0;color:var(--gray2);">(optional)</span></label>
+          <input class="form-input" type="tel" id="phone" name="phone" placeholder="(555) 000-0000">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="preferred-contact">Best Way to Reach You</label>
+          <select class="form-select" id="preferred-contact" name="preferred_contact">
+            <option value="Email">Email</option>
+            <option value="Phone">Phone</option>
+            <option value="Either">Either is fine</option>
+          </select>
+        </div>
+      </div>
+
       <div class="form-row">
         <div class="form-group">
           <label class="form-label" for="organization">Organization</label>
@@ -109,26 +128,32 @@
         </div>
         <div class="form-group">
           <label class="form-label" for="inquiry-type">Inquiry Type</label>
-          <select class="form-select" id="inquiry-type" name="inquiry-type" required>
+          <select class="form-select" id="inquiry-type" name="inquiry_type" required>
             <option value="">Select one…</option>
-            <option value="general">General Inquiry</option>
-            <option value="consulting">Consulting Services</option>
-            <option value="government">Government Contracting</option>
-            <option value="teaming">Teaming Opportunity</option>
-            <option value="opticheck">OptiCheck</option>
-            <option value="academy">ColeHart Academy</option>
+            <option value="General Inquiry">General Inquiry</option>
+            <option value="Consulting Services">Consulting Services</option>
+            <option value="Government Contracting">Government Contracting</option>
+            <option value="Teaming Opportunity">Teaming Opportunity</option>
+            <option value="OptiCheck">OptiCheck</option>
+            <option value="ColeHart Academy">ColeHart Academy</option>
           </select>
         </div>
       </div>
+
       <div class="form-group">
         <label class="form-label" for="message">Message</label>
         <textarea class="form-textarea" id="message" name="message" placeholder="Tell us about your organization and what you're looking for…" required></textarea>
       </div>
+
       <div class="form-group">
         <label class="form-label" for="how-heard">How did you hear about us? <span style="font-weight:400;text-transform:none;letter-spacing:0;color:var(--gray2);">(optional)</span></label>
-        <input class="form-input" type="text" id="how-heard" name="how-heard" placeholder="LinkedIn, referral, web search…">
+        <input class="form-input" type="text" id="how-heard" name="how_heard" placeholder="LinkedIn, referral, web search…">
       </div>
-      <button type="submit" class="form-submit">Send Message →</button>
+
+      <!-- Formspree honeypot — keeps spam bots out, leave this here -->
+      <input type="text" name="_gotcha" style="display:none">
+
+      <button type="submit" class="form-submit" id="submit-btn">Send Message →</button>
     </form>
 
     <div id="contact-success" style="display:none;background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.25);border-radius:14px;padding:28px;margin-top:32px;text-align:center;">
@@ -164,7 +189,7 @@
 <section class="content-section dark">
   <div class="content-section-inner" style="max-width:640px;text-align:center;">
     <span class="sec-label" style="color:var(--accent3);">Prime Contractors</span>
-    <h2 class="sec-h2" style="color:white;margin-bottom:16px;">Looking to add SDVOSB capability to your team?</h2>
+    <h2 class="sec-h2" style="color:white;margin-bottom:16px;">Looking to add veteran-owned capability to your team?</h2>
     <p style="font-size:15px;font-weight:300;color:rgba(255,255,255,0.5);line-height:1.75;margin-bottom:0;">Select <strong style="color:rgba(255,255,255,0.7);">"Teaming Opportunity"</strong> in the inquiry dropdown above — or email us directly at <a href="mailto:info@colehartenterprises.com" style="color:var(--accent3);">info@colehartenterprises.com</a>.</p>
   </div>
 </section>
@@ -185,16 +210,40 @@
 </footer>
 
 <script>
-  function handleContact(e) {
+  // Formspree AJAX submission — shows success state without page reload
+  var form = document.getElementById('contact-form');
+  var btn  = document.getElementById('submit-btn');
+
+  form.addEventListener('submit', async function(e) {
     e.preventDefault();
-    document.getElementById('contact-form').style.display = 'none';
-    document.getElementById('contact-success').style.display = 'block';
-  }
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+    try {
+      var res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        form.style.display = 'none';
+        document.getElementById('contact-success').style.display = 'block';
+      } else {
+        btn.disabled = false;
+        btn.textContent = 'Send Message →';
+        alert('Something went wrong. Please email info@colehartenterprises.com directly.');
+      }
+    } catch(err) {
+      btn.disabled = false;
+      btn.textContent = 'Send Message →';
+      alert('Could not connect. Please email info@colehartenterprises.com directly.');
+    }
+  });
+
   function toggleMenu(){document.getElementById('mobile-nav').classList.toggle('open')}
   function closeMenu(){document.getElementById('mobile-nav').classList.remove('open')}
   document.addEventListener('click',function(e){
-    const menu=document.getElementById('mobile-nav');const btn=document.querySelector('.hamburger');
-    if(menu.classList.contains('open')&&!menu.contains(e.target)&&!btn.contains(e.target)){closeMenu()}
+    const mn=document.getElementById('mobile-nav');const hb=document.querySelector('.hamburger');
+    if(mn.classList.contains('open')&&!mn.contains(e.target)&&!hb.contains(e.target)){closeMenu()}
   })
 </script>
 </body>
