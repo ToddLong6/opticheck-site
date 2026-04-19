@@ -92,11 +92,13 @@
       <div style="flex:1;">
         <h3>The Small Business Government Contracting Starter Guide</h3>
         <p>Everything you need to go from "I want to work with the government" to an active SAM.gov registration, a capability statement, and a strategy for finding your first opportunity. Free download.</p>
-        <form class="lead-magnet-form" onsubmit="handleGuide(event)">
-          <input type="email" placeholder="Enter your email to download" required>
-          <button type="submit">Download Free →</button>
+        <form class="lead-magnet-form" id="guide-form" action="https://formspree.io/f/mgorykdv" method="POST">
+          <input type="hidden" name="_subject" value="Guide Download — GovCon Starter Guide">
+          <input type="hidden" name="source" value="Guide Download">
+          <input type="email" name="email" placeholder="Enter your email to download" required>
+          <button type="submit" id="guide-btn">Download Free →</button>
         </form>
-        <div id="guide-success" style="display:none;font-size:13px;color:var(--accent3);margin-top:12px;">✦ Check your inbox — the guide is on its way.</div>
+        <div id="guide-success" style="display:none;font-size:13px;color:var(--accent3);margin-top:12px;">✦ Your download started. Check your downloads folder.</div>
       </div>
     </div>
   </div>
@@ -212,11 +214,13 @@
   <div class="cta-inner">
     <h2>Want these delivered to your inbox?</h2>
     <p>Join the list. We publish practical guides for government contractors and operations professionals — no fluff.</p>
-    <form style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:0;" onsubmit="handleInsightSub(event)">
-      <input type="email" placeholder="Enter your email" required style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.2);border-radius:10px;padding:14px 20px;font-size:14px;color:white;font-family:inherit;min-width:260px;">
-      <button type="submit" class="btn-primary" style="border:none;cursor:pointer;">Subscribe →</button>
+    <form id="sub-form" style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:0;" action="https://formspree.io/f/mgorykdv" method="POST">
+      <input type="hidden" name="_subject" value="Insights Newsletter Signup">
+      <input type="hidden" name="source" value="Newsletter Signup">
+      <input type="email" name="email" placeholder="Enter your email" required style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.2);border-radius:10px;padding:14px 20px;font-size:14px;color:white;font-family:inherit;min-width:260px;">
+      <button type="submit" id="sub-btn" class="btn-primary" style="border:none;cursor:pointer;">Subscribe →</button>
     </form>
-    <div id="insight-sub-success" style="display:none;font-size:14px;color:var(--accent3);margin-top:16px;">✦ You're subscribed. New guides coming soon.</div>
+    <div id="insight-sub-success" style="display:none;font-size:14px;color:var(--accent3);margin-top:16px;">✦ You're on the list. New guides coming soon.</div>
   </div>
 </section>
 
@@ -236,8 +240,39 @@
 </footer>
 
 <script>
-  function handleGuide(e){e.preventDefault();e.target.style.display='none';document.getElementById('guide-success').style.display='block';}
-  function handleInsightSub(e){e.preventDefault();e.target.style.display='none';document.getElementById('insight-sub-success').style.display='block';}
+  // ── Guide download form ──
+  document.getElementById('guide-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    var btn = document.getElementById('guide-btn');
+    btn.disabled = true; btn.textContent = 'Preparing…';
+    // Trigger the PDF download immediately
+    var a = document.createElement('a');
+    a.href = 'SmallBusiness_GovContracting_Guide.pdf';
+    a.download = 'SmallBusiness_GovContracting_Guide.pdf';
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    // Send email to Formspree in background (don't wait)
+    fetch(this.action, { method:'POST', body:new FormData(this), headers:{'Accept':'application/json'} });
+    // Show success
+    this.style.display = 'none';
+    document.getElementById('guide-success').style.display = 'block';
+  });
+
+  // ── Newsletter signup form ──
+  document.getElementById('sub-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    var btn = document.getElementById('sub-btn');
+    btn.disabled = true; btn.textContent = 'Subscribing…';
+    try {
+      var res = await fetch(this.action, { method:'POST', body:new FormData(this), headers:{'Accept':'application/json'} });
+      if (res.ok) {
+        this.style.display = 'none';
+        document.getElementById('insight-sub-success').style.display = 'block';
+      } else {
+        btn.disabled = false; btn.textContent = 'Subscribe →';
+      }
+    } catch(err) { btn.disabled = false; btn.textContent = 'Subscribe →'; }
+  });
+
   function toggleMenu(){document.getElementById('mobile-nav').classList.toggle('open')}
   function closeMenu(){document.getElementById('mobile-nav').classList.remove('open')}
   document.addEventListener('click',function(e){
