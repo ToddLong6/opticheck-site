@@ -11,6 +11,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>emailjs.init('m42c8vcQffBGszkAt');</script>
 </head>
 <body>
 
@@ -227,6 +229,11 @@
       if (res.ok) {
         form.style.display = 'none';
         document.getElementById('contact-success').style.display = 'block';
+        // Auto-reply
+        emailjs.send('service_lg3tx6u', 'template_fpm2t8r', {
+          to_email: form.querySelector('[name="email"]').value,
+          to_name:  form.querySelector('[name="name"]').value || 'there',
+        }).catch(function(){});
       } else {
         btn.disabled = false;
         btn.textContent = 'Send Message →';

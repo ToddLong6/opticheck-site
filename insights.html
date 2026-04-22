@@ -11,6 +11,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>emailjs.init('m42c8vcQffBGszkAt');</script>
 </head>
 <body>
 
@@ -316,7 +318,10 @@
     a.download = 'SmallBusiness_GovContracting_Guide.pdf';
     document.body.appendChild(a); a.click(); document.body.removeChild(a);
     // Send email to Formspree in background (don't wait)
+    var email = this.querySelector('[name="email"]').value;
     fetch(this.action, { method:'POST', body:new FormData(this), headers:{'Accept':'application/json'} });
+    // Auto-reply
+    emailjs.send('service_lg3tx6u', 'template_fpm2t8r', { to_email: email, to_name: 'there' }).catch(function(){});
     // Show success
     this.style.display = 'none';
     document.getElementById('guide-success').style.display = 'block';
@@ -332,6 +337,9 @@
       if (res.ok) {
         this.style.display = 'none';
         document.getElementById('insight-sub-success').style.display = 'block';
+        emailjs.send('service_lg3tx6u', 'template_fpm2t8r', {
+          to_email: this.querySelector('[name="email"]').value, to_name: 'there'
+        }).catch(function(){});
       } else {
         btn.disabled = false; btn.textContent = 'Subscribe →';
       }
@@ -345,8 +353,13 @@
     btn.disabled = true; btn.textContent = 'Sending…';
     try {
       var res = await fetch(this.action, { method:'POST', body:new FormData(this), headers:{'Accept':'application/json'} });
-      if (res.ok) { this.style.display='none'; document.getElementById('podcast-success').style.display='block'; }
-      else { btn.disabled=false; btn.textContent='Submit My Story →'; }
+      if (res.ok) {
+        this.style.display='none'; document.getElementById('podcast-success').style.display='block';
+        emailjs.send('service_lg3tx6u', 'template_fpm2t8r', {
+          to_email: this.querySelector('[name="email"]').value,
+          to_name:  this.querySelector('[name="name"]').value || 'there'
+        }).catch(function(){});
+      } else { btn.disabled=false; btn.textContent='Submit My Story →'; }
     } catch(err) { btn.disabled=false; btn.textContent='Submit My Story →'; }
   });
 
