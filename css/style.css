@@ -898,6 +898,10 @@ footer {
   .insights-grid { grid-template-columns: 1fr; }
   .lead-magnet { padding: 32px 24px; }
 
+  /* Podcast section mobile */
+  .podcast-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+  section[style*="linear-gradient"] { padding: 64px 20px !important; }
+
   .service-item { flex-direction: column; }
 
   .cta-band { padding: 64px 20px; }
