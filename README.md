@@ -1,4 +1,4 @@
-# opticheck-site
+# ColeHart Main-site
 
 `opticheck-site` is the public marketing website for ColeHart Enterprises and its OptiCheck solution.
 
