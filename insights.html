@@ -13,6 +13,15 @@
 <link rel="stylesheet" href="css/style.css">
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>emailjs.init('m42c8vcQffBGszkAt');</script>
+<style>
+  .badge-live { display:inline-block; background:rgba(45,143,212,0.1); border:1px solid rgba(45,143,212,0.3); color:var(--accent2); font-size:10px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; padding:3px 9px; border-radius:99px; margin-bottom:8px; }
+  .insight-read-link { display:inline-flex; align-items:center; gap:5px; color:var(--accent); font-size:12px; font-weight:600; text-decoration:none; margin-top:10px; }
+  .insight-read-link:hover { text-decoration:underline; }
+  .insight-card-live { transition:transform 0.15s, box-shadow 0.15s; }
+  .insight-card-live:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(0,0,0,0.1); }
+  .load-more-btn { background:white; border:1.5px solid var(--gray3); color:var(--navy); font-size:14px; font-weight:600; padding:12px 36px; border-radius:10px; cursor:pointer; font-family:inherit; transition:border-color 0.15s, color 0.15s; }
+  .load-more-btn:hover { border-color:var(--accent); color:var(--accent); }
+</style>
 </head>
 <body>
 
@@ -110,18 +119,29 @@
 <section class="content-section alt">
   <div class="content-section-inner">
     <div class="sec-head" style="text-align:left;margin-bottom:40px;">
-      <span class="sec-label">Coming Soon</span>
-      <h2 class="sec-h2">Articles launching soon.</h2>
-      <p class="sec-sub" style="margin:12px 0 0;text-align:left;">We publish 2–4 practical guides and perspectives per month. Content in development includes:</p>
+      <span class="sec-label">Articles</span>
+      <h2 class="sec-h2">Latest insights.</h2>
+      <p class="sec-sub" style="margin:12px 0 0;text-align:left;">Practical guides on government contracting, SAM.gov, operations, and AI — published on LinkedIn. New articles added monthly.</p>
     </div>
     <div class="insights-grid">
-      <div class="insight-card">
+      <div class="insight-card insight-card-live">
+        <div class="insight-thumb">🔍</div>
+        <div class="insight-body">
+          <span class="badge-live">Published</span>
+          <div class="insight-tag">Government Contracting</div>
+          <div class="insight-title">Why Your SAM.gov Registration Gets Stuck: The Address Validation Problem</div>
+          <p class="insight-desc">Address mismatches between your IRS records, state filings, and SAM.gov entry are the #1 reason registrations stall. Here's exactly what to check before you submit.</p>
+          <a href="https://www.linkedin.com/pulse/why-your-samgov-registration-gets-stuck-address-oe6we/" target="_blank" rel="noopener" class="insight-read-link">Read on LinkedIn →</a>
+        </div>
+      </div>
+      <div class="insight-card insight-card-live">
         <div class="insight-thumb">🏛️</div>
         <div class="insight-body">
-          <span class="badge-soon">Coming Soon</span>
+          <span class="badge-live">Published · April 28, 2026</span>
           <div class="insight-tag">Government Contracting</div>
-          <div class="insight-title">How to Register on SAM.gov and Not Mess It Up</div>
-          <p class="insight-desc">A step-by-step walkthrough of the SAM.gov registration process what fields matter, what to avoid, and how to verify your veteran-owned status.</p>
+          <div class="insight-title">How to Register on SAM.gov and Not Mess It Up: A Step-by-Step Guide</div>
+          <p class="insight-desc">A practical walkthrough of the SAM.gov registration process, what to prepare, what fields matter, common mistakes that delay approval, and why registration is always free.</p>
+          <a href="https://www.linkedin.com/pulse/how-register-samgov-mess-up-step-by-step-guide-5q6ke/" target="_blank" rel="noopener" class="insight-read-link">Read on LinkedIn →</a>
         </div>
       </div>
       <div class="insight-card">
@@ -169,6 +189,9 @@
           <p class="insight-desc">The same diagnostic framework we use in engagements adapted into a self-guided process your team can run internally.</p>
         </div>
       </div>
+    </div>
+    <div style="text-align:center;margin-top:36px;" id="load-more-wrap">
+      <button class="load-more-btn" id="load-more-btn">Load More Articles ↓</button>
     </div>
   </div>
 </section>
@@ -362,6 +385,24 @@
       } else { btn.disabled=false; btn.textContent='Submit My Story →'; }
     } catch(err) { btn.disabled=false; btn.textContent='Submit My Story →'; }
   });
+
+  // ── Insights: show 6, load more ──
+  (function() {
+    var grid = document.querySelector('.insights-grid');
+    if (!grid) return;
+    var cards = Array.from(grid.children);
+    var PAGE = 6, shown = PAGE;
+    cards.forEach(function(c, i) { if (i >= PAGE) c.style.display = 'none'; });
+    var btn = document.getElementById('load-more-btn');
+    var wrap = document.getElementById('load-more-wrap');
+    if (!btn) return;
+    if (cards.length <= PAGE) { wrap.style.display = 'none'; return; }
+    btn.addEventListener('click', function() {
+      cards.slice(shown, shown + PAGE).forEach(function(c) { c.style.display = ''; });
+      shown += PAGE;
+      if (shown >= cards.length) wrap.style.display = 'none';
+    });
+  })();
 
   function toggleMenu(){document.getElementById('mobile-nav').classList.toggle('open')}
   function closeMenu(){document.getElementById('mobile-nav').classList.remove('open')}

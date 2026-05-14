@@ -3,28 +3,63 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ColeHart Enterprises — Infrastructure. Technology. Execution.</title>
-
+<title>ColeHart Enterprises — Small Business Operations, AI &amp; Procurement Support</title>
 <link rel="icon" type="image/png" href="images/logo-icon.png">
-
-<meta name="description" content="ColeHart Enterprises is a veteran-owned infrastructure, technology, and operations advisory firm. Federal consulting, AI tools, and program management.">
-<meta property="og:title" content="ColeHart Enterprises — Infrastructure. Technology. Execution.">
-<meta property="og:description" content="Veteran-owned consulting firm bridging federal infrastructure, technology, and operations.">
+<meta name="description" content="ColeHart Enterprises LLC helps small businesses improve operations, adopt practical AI tools, train teams, and organize vendor and procurement support. Veteran-owned.">
+<meta property="og:title" content="ColeHart Enterprises — Small Business Operations, AI &amp; Procurement Support">
+<meta property="og:description" content="Find the bottlenecks. Fix the workflows. ColeHart helps small businesses work smarter with operations consulting, technology, AI, training, and procurement support.">
 <meta property="og:url" content="https://colehartenterprises.com">
 <meta property="og:type" content="website">
 
-<!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-NYGXGHXY8R"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-NYGXGHXY8R');
-</script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-NYGXGHXY8R');</script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
+<style>
+  .problem-grid, .service-grid-2x2, .fix-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  @media (max-width: 700px) {
+    .problem-grid, .service-grid-2x2, .fix-grid { grid-template-columns: 1fr; }
+  }
+  .fix-card {
+    background: var(--light);
+    border: 1px solid var(--gray3);
+    border-radius: 16px;
+    padding: 28px;
+  }
+  .fix-card-icon { font-size: 28px; margin-bottom: 12px; }
+  .fix-card-title { font-size: 16px; font-weight: 600; color: var(--navy2); margin-bottom: 8px; }
+  .fix-card-desc { font-size: 14px; font-weight: 300; color: var(--text2); line-height: 1.65; }
+
+  .problem-card {
+    background: white;
+    border: 1px solid var(--gray3);
+    border-radius: 16px;
+    padding: 28px;
+    border-top: 3px solid var(--accent);
+  }
+  .problem-quote {
+    font-size: 15px; font-weight: 600; color: var(--navy2);
+    margin-bottom: 10px; line-height: 1.4;
+  }
+  .problem-answer {
+    font-size: 13px; font-weight: 300; color: var(--text2); line-height: 1.65;
+  }
+
+  .gov-strip-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+  .hero-gov-link {
+    font-size: 13px; color: rgba(255,255,255,0.4);
+    text-decoration: none; display: inline-block; margin-top: 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.15); padding-bottom: 2px;
+    transition: color 0.15s;
+  }
+  .hero-gov-link:hover { color: rgba(255,255,255,0.7); }
+</style>
 </head>
 <body>
 
@@ -98,78 +133,149 @@
 <section class="hero">
   <div class="hero-inner">
     <div>
-      <img src="images/logo-full.png" alt="ColeHart Enterprises" class="logo-hero" style="margin-bottom:28px;">
-      <div class="hero-eyebrow">Veteran-Owned · Federal &amp; Enterprise</div>
-      <h1 class="hero-h1">Built by Veterans.<br><em>Driven by Results.</em></h1>
-      <p class="hero-sub">ColeHart Enterprises is a veteran-owned infrastructure, technology, and operations advisory firm. We go inside organizations, find what's broken, and build better systems using technology and AI where it makes sense.</p>
+      <div class="hero-eyebrow">Small Business Operations · AI · Training · Procurement Support</div>
+      <h1 class="hero-h1">Find the Bottlenecks.<br><em>Fix the Workflows.</em></h1>
+      <p class="hero-sub">ColeHart Enterprises LLC helps small businesses improve operations, adopt practical technology and AI tools, train their teams, and organize vendor and procurement support.</p>
       <div class="hero-btns">
-        <a href="contact.html" class="btn-primary">Start a Conversation →</a>
-        <a href="government/capability.html" class="btn-ghost">View Capability Statement ↓</a>
+        <a href="https://opticheck.colehartenterprises.com" target="_blank" rel="noopener" class="btn-primary">Get a Free Operations Assessment →</a>
+        <a href="services/consulting.html" class="btn-ghost">Explore Services ↓</a>
       </div>
       <div class="hero-trust">
         <div class="trust-item"><div class="trust-dot"></div>Veteran-Owned</div>
         <div class="trust-item"><div class="trust-dot"></div>SAM.gov Registered</div>
-        <div class="trust-item"><div class="trust-dot"></div>Federal &amp; Enterprise</div>
+        <div class="trust-item"><div class="trust-dot"></div>Small Business Focused</div>
       </div>
+      <a href="government/capability.html" class="hero-gov-link">Government buyer or prime contractor? View our government capabilities →</a>
     </div>
+
+    <!-- Right panel: problem preview -->
     <div style="display:flex;flex-direction:column;gap:16px;">
-      <div style="background:rgba(30,111,168,0.06);border:1px solid rgba(30,111,168,0.15);border-radius:20px;padding:32px;">
-        <div style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.25);margin-bottom:20px;">Three Disciplines. One Firm.</div>
-        <div style="display:flex;flex-direction:column;gap:14px;">
-          <div style="display:flex;align-items:center;gap:14px;padding:14px;background:rgba(255,255,255,0.04);border-radius:12px;border:1px solid rgba(255,255,255,0.07);">
-            <div style="font-size:22px;width:44px;height:44px;background:rgba(30,111,168,0.15);border-radius:10px;display:flex;align-items:center;justify-content:center;">🏛️</div>
-            <div>
-              <div style="font-size:14px;font-weight:600;color:rgba(255,255,255,0.8);">Consulting</div>
-              <div style="font-size:12px;color:rgba(255,255,255,0.3);margin-top:2px;">Federal infrastructure &amp; program management</div>
-            </div>
+      <div style="background:rgba(30,111,168,0.06);border:1px solid rgba(30,111,168,0.15);border-radius:20px;padding:28px;">
+        <div style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.25);margin-bottom:18px;">Sound Familiar?</div>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+
+          <div style="display:flex;align-items:flex-start;gap:12px;padding:12px;background:rgba(255,255,255,0.04);border-radius:10px;border:1px solid rgba(255,255,255,0.07);">
+            <div style="font-size:18px;flex-shrink:0;margin-top:1px;">⚡</div>
+            <div style="font-size:13px;color:rgba(255,255,255,0.55);line-height:1.5;">Manual workflows slowing everything down</div>
           </div>
-          <div style="display:flex;align-items:center;gap:14px;padding:14px;background:rgba(255,255,255,0.04);border-radius:12px;border:1px solid rgba(255,255,255,0.07);">
-            <div style="font-size:22px;width:44px;height:44px;background:rgba(30,111,168,0.15);border-radius:10px;display:flex;align-items:center;justify-content:center;">⚙️</div>
-            <div>
-              <div style="font-size:14px;font-weight:600;color:rgba(255,255,255,0.8);">Technology</div>
-              <div style="font-size:12px;color:rgba(255,255,255,0.3);margin-top:2px;">AI tools, automation &amp; systems integration</div>
-            </div>
+
+          <div style="display:flex;align-items:flex-start;gap:12px;padding:12px;background:rgba(255,255,255,0.04);border-radius:10px;border:1px solid rgba(255,255,255,0.07);">
+            <div style="font-size:18px;flex-shrink:0;margin-top:1px;">🤖</div>
+            <div style="font-size:13px;color:rgba(255,255,255,0.55);line-height:1.5;">Not sure where AI fits in your business</div>
           </div>
-          <div style="display:flex;align-items:center;gap:14px;padding:14px;background:rgba(255,255,255,0.04);border-radius:12px;border:1px solid rgba(255,255,255,0.07);">
-            <div style="font-size:22px;width:44px;height:44px;background:rgba(30,111,168,0.15);border-radius:10px;display:flex;align-items:center;justify-content:center;">🎓</div>
-            <div>
-              <div style="font-size:14px;font-weight:600;color:rgba(255,255,255,0.8);">Academy</div>
-              <div style="font-size:12px;color:rgba(255,255,255,0.3);margin-top:2px;">Gov contracting education &amp; PM training</div>
-            </div>
+
+          <div style="display:flex;align-items:flex-start;gap:12px;padding:12px;background:rgba(255,255,255,0.04);border-radius:10px;border:1px solid rgba(255,255,255,0.07);">
+            <div style="font-size:18px;flex-shrink:0;margin-top:1px;">📋</div>
+            <div style="font-size:13px;color:rgba(255,255,255,0.55);line-height:1.5;">Processes aren't documented or consistent</div>
           </div>
+
+          <div style="display:flex;align-items:flex-start;gap:12px;padding:12px;background:rgba(255,255,255,0.04);border-radius:10px;border:1px solid rgba(255,255,255,0.07);">
+            <div style="font-size:18px;flex-shrink:0;margin-top:1px;">📦</div>
+            <div style="font-size:13px;color:rgba(255,255,255,0.55);line-height:1.5;">Vendor and supply coordination is a headache</div>
+          </div>
+
         </div>
+        <div style="margin-top:16px;font-size:12px;color:rgba(255,255,255,0.25);text-align:center;line-height:1.5;">If any of these sound familiar, we can help.</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── THREE DIVISIONS ── -->
+<!-- ── WHAT WE HELP FIX ── -->
+<section class="content-section alt">
+  <div class="content-section-inner">
+    <div class="sec-head" style="text-align:center;max-width:560px;margin:0 auto 40px;">
+      <span class="sec-label">Pain Points</span>
+      <h2 class="sec-h2">What We Help Small Businesses Fix</h2>
+    </div>
+    <div class="fix-grid">
+
+      <div class="fix-card">
+        <div class="fix-card-icon">⚙️</div>
+        <div class="fix-card-title">Operations Problems</div>
+        <p class="fix-card-desc">Messy workflows, bottlenecks, duplicated work, poor handoffs, and unclear processes that make it harder to get things done consistently.</p>
+      </div>
+
+      <div class="fix-card">
+        <div class="fix-card-icon">🤖</div>
+        <div class="fix-card-title">Technology &amp; AI Confusion</div>
+        <p class="fix-card-desc">Too many tools, no clear system, manual tasks that could be automated, or uncertainty about where AI fits in your day-to-day work.</p>
+      </div>
+
+      <div class="fix-card">
+        <div class="fix-card-icon">🎓</div>
+        <div class="fix-card-title">Training Gaps</div>
+        <p class="fix-card-desc">Owners and teams who need practical, hands-on training in AI, project management, operations improvement, and technology adoption.</p>
+      </div>
+
+      <div class="fix-card">
+        <div class="fix-card-icon">📦</div>
+        <div class="fix-card-title">Vendor &amp; Procurement Support</div>
+        <p class="fix-card-desc">Help organizing quotes, finding suppliers, comparing options, coordinating purchases, or preparing for public-sector opportunities.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── SERVICES ── -->
 <section class="divisions">
   <div class="divisions-inner">
     <div class="sec-head">
-      <span class="sec-label">What We Do</span>
-      <h2 class="sec-h2">Three divisions. One integrated firm.</h2>
-      <p class="sec-sub">We built ColeHart to bridge infrastructure, technology, and execution combining deep federal experience with hands-on IT operations and practical AI integration.</p>
+      <span class="sec-label">Services</span>
+      <h2 class="sec-h2">Services Built Around Better Operations</h2>
+      <p class="sec-sub">ColeHart helps organizations improve how work gets done. We start by understanding your current process, finding the bottlenecks, and recommending practical improvements.</p>
     </div>
-    <div class="divisions-grid">
+    <div class="service-grid-2x2">
+
       <a href="services/consulting.html" class="division-card">
-        <div class="division-icon">🏛️</div>
-        <div class="division-name">ColeHart Consulting</div>
-        <p class="division-desc">Federal infrastructure consulting, program management, IT modernization, and operational assessments for government agencies and enterprise organizations.</p>
+        <div class="division-icon">⚙️</div>
+        <div class="division-name">Operations Consulting</div>
+        <p class="division-desc">Workflow reviews, process improvement, SOPs, bottleneck analysis, and operational assessments that make your day-to-day work more consistent and efficient.</p>
         <div class="division-link">Explore Consulting →</div>
       </a>
+
       <a href="services/technology.html" class="division-card">
-        <div class="division-icon">⚙️</div>
-        <div class="division-name">ColeHart Technology</div>
-        <p class="division-desc">AI-assisted tools, workflow automation platforms, and operational systems built for real-world use in federal and enterprise environments.</p>
+        <div class="division-icon">💡</div>
+        <div class="division-name">Technology &amp; AI Support</div>
+        <p class="division-desc">AI readiness assessments, automation planning, tool selection, systems improvement, and digital workflow support, practical and business-ready.</p>
         <div class="division-link">Explore Technology →</div>
       </a>
+
       <a href="services/academy.html" class="division-card">
         <div class="division-icon">🎓</div>
-        <div class="division-name">ColeHart Academy</div>
-        <p class="division-desc">Government contracting fundamentals, project management essentials, AI adoption training, and operations leadership development programs.</p>
+        <div class="division-name">Training &amp; Academy</div>
+        <p class="division-desc">Practical training in AI, project management, operations improvement, technology adoption, and business systems designed for real working environments.</p>
         <div class="division-link">Explore Academy →</div>
       </a>
+
+      <a href="contact.html" class="division-card">
+        <div class="division-icon">📦</div>
+        <div class="division-name">Procurement &amp; Vendor Support</div>
+        <p class="division-desc">Supplier research, quote organization, vendor coordination, sourcing support, kitting, delivery coordination, and procurement documentation.</p>
+        <div class="division-link">Get Procurement Support →</div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── OPTICHECK ── -->
+<section class="opticheck-spotlight">
+  <div class="opticheck-spotlight-inner">
+    <div>
+      <div class="spotlight-badge">Free Operations Tool</div>
+      <h2>Start With a Free Operations Checkup</h2>
+      <p>OptiCheck helps business owners quickly identify workflow gaps, bottlenecks, manual tasks, and technology opportunities. Get a structured snapshot of where your business may be losing time, money, or efficiency in minutes, not weeks.</p>
+      <div class="spotlight-btns">
+        <a href="https://opticheck.colehartenterprises.com" class="btn-primary" target="_blank" rel="noopener">Try OptiCheck Free →</a>
+        <a href="solutions/opticheck.html" class="btn-ghost">Learn How It Works ↗</a>
+      </div>
+    </div>
+    <div class="spotlight-visual">
+      <div class="spotlight-score">74</div>
+      <div class="spotlight-score-label">/ 100 Operational Score</div>
+      <div class="spotlight-tagline">3 high-impact improvements<br>identified in your operation</div>
     </div>
   </div>
 </section>
@@ -178,68 +284,85 @@
 <section class="serve">
   <div class="serve-inner">
     <span class="sec-label">Who We Serve</span>
-    <h2 class="sec-h2">Government agencies.<br>Enterprise organizations.</h2>
-    <p class="serve-copy">Whether you're modernizing a federal facility, improving IT operations, or closing the gap between your people and your processes, ColeHart delivers structured solutions built for the long run.</p>
+    <h2 class="sec-h2">Small businesses.<br>Growing teams. Public-sector buyers.</h2>
+    <p class="serve-copy">Whether you're a small business owner trying to get control of your operations, a growing team adding people and tools, or a government buyer looking for professional services support ColeHart has a lane for you.</p>
     <div class="serve-tags">
+      <div class="serve-tag">Small Businesses</div>
+      <div class="serve-tag">Growing Teams</div>
+      <div class="serve-tag">Nonprofits &amp; Schools</div>
       <div class="serve-tag">Government Agencies</div>
-      <div class="serve-tag">Federal Infrastructure Programs</div>
-      <div class="serve-tag">VA &amp; DoD Programs</div>
-      <div class="serve-tag">Enterprise Organizations</div>
-      <div class="serve-tag">Small Business Contractors</div>
+      <div class="serve-tag">Prime Contractors</div>
     </div>
   </div>
 </section>
 
-<!-- ── TESTIMONIALS ── -->
-<section class="testimonials">
-  <div class="testimonials-inner">
-    <span class="sec-label">Client Feedback</span>
-    <h2 class="sec-h2">What our clients have to say.</h2>
-    <div class="testi-carousel">
-      <button class="testi-arrow" id="testi-prev" aria-label="Previous testimonial">&#8592;</button>
-      <div class="testi-viewport">
-
-        <div class="testi-slide active">
-          <p class="testi-quote">"It quickly became clear that ColeHart understood our operational environment not just the theory. They delivered a structured assessment that our team could actually act on."</p>
-          <div class="testi-author">Program Manager</div>
-          <div class="testi-company">Federal Infrastructure Program</div>
-        </div>
-
-        <div class="testi-slide">
-          <p class="testi-quote">"The OptiCheck analysis surfaced workflow gaps we'd been working around for years. Having it laid out with clear recommendations made the case for change internally."</p>
-          <div class="testi-author">Operations Director</div>
-          <div class="testi-company">Enterprise Organization</div>
-        </div>
-
-        <div class="testi-slide">
-          <p class="testi-quote">"ColeHart brought veteran discipline and real technical depth to the engagement. That combination rare in this space is exactly what a complex modernization effort requires."</p>
-          <div class="testi-author">Contracting Officer</div>
-          <div class="testi-company">Government Agency</div>
-        </div>
-
-      </div>
-      <button class="testi-arrow" id="testi-next" aria-label="Next testimonial">&#8594;</button>
+<!-- ── COMMON PROBLEMS WE HELP SOLVE ── -->
+<section class="content-section alt">
+  <div class="content-section-inner">
+    <div class="sec-head" style="text-align:center;max-width:560px;margin:0 auto 40px;">
+      <span class="sec-label">We Hear This Often</span>
+      <h2 class="sec-h2">Common Problems We Help Solve</h2>
     </div>
-    <div class="testi-dots" id="testi-dots"></div>
+    <div class="problem-grid">
+
+      <div class="problem-card">
+        <div class="problem-quote">"We are doing too much manually."</div>
+        <p class="problem-answer">We identify tasks that can be simplified, standardized, or automated, so your team spends time on work that actually moves the business forward.</p>
+      </div>
+
+      <div class="problem-card">
+        <div class="problem-quote">"Our team is busy but not efficient."</div>
+        <p class="problem-answer">We review workflows, map where time is being lost, and recommend practical changes that reduce the friction without disrupting what's already working.</p>
+      </div>
+
+      <div class="problem-card">
+        <div class="problem-quote">"We want to use AI, but don't know where to start."</div>
+        <p class="problem-answer">We help you find practical AI use cases that match your specific business, so you adopt technology that actually saves time instead of creating more complexity.</p>
+      </div>
+
+      <div class="problem-card">
+        <div class="problem-quote">"We need better systems before we grow."</div>
+        <p class="problem-answer">We help document your processes, improve handoffs, and build repeatable workflows so that growth doesn't mean chaos.</p>
+      </div>
+
+    </div>
   </div>
 </section>
 
-<!-- ── OPTICHECK SPOTLIGHT ── -->
-<section class="opticheck-spotlight">
-  <div class="opticheck-spotlight-inner">
-    <div>
-      <div class="spotlight-badge">New Product</div>
-      <h2>Introducing OptiCheck — AI-powered operational analysis.</h2>
-      <p>Find out what's holding your organization back. OptiCheck maps your operation, scores your processes, and delivers a structured analysis with actionable recommendations in minutes, not weeks.</p>
-      <div class="spotlight-btns">
-        <a href="https://opticheck.colehartenterprises.com/app" class="btn-primary" target="_blank" rel="noopener">Try OptiCheck Free →</a>
-        <a href="https://opticheck.colehartenterprises.com/app" target="_blank" rel="noopener" class="btn-ghost">Learn More ↗</a>
+<!-- ── GOVERNMENT STRIP ── -->
+<section class="content-section dark">
+  <div class="content-section-inner">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;">
+      <div>
+        <span class="sec-label" style="color:var(--accent3);">Government &amp; Public-Sector</span>
+        <h2 class="sec-h2" style="color:white;margin-bottom:16px;">We also support government agencies, schools, and prime contractors.</h2>
+        <p style="font-size:15px;font-weight:300;color:rgba(255,255,255,0.5);line-height:1.75;margin-bottom:28px;">ColeHart Enterprises LLC is positioned to support government agencies, schools, and prime contractors through professional services, technology support, training, and procurement support. SAM.gov registered, veteran-owned.</p>
+        <div class="gov-strip-btns">
+          <a href="government/capability.html" class="btn-primary">View Government Capabilities →</a>
+          <a href="government/capability-print-general.html" target="_blank" rel="noopener" class="btn-secondary">Download Capability Statement</a>
+        </div>
       </div>
-    </div>
-    <div class="spotlight-visual">
-      <div class="spotlight-score">74</div>
-      <div class="spotlight-score-label">/ 100 Operational Score</div>
-      <div class="spotlight-tagline">3 high-impact improvements<br>identified in your operation</div>
+      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:32px;">
+        <span class="sec-label" style="color:var(--accent3);">Business Data</span>
+        <div style="margin-top:16px;display:flex;flex-direction:column;gap:10px;">
+          <div style="display:flex;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,0.07);padding-bottom:8px;">
+            <span style="font-size:12px;color:rgba(255,255,255,0.35);">Unique Entity ID</span>
+            <span style="font-size:12px;font-weight:600;color:rgba(255,255,255,0.7);">QMEXHNTJYJR3</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,0.07);padding-bottom:8px;">
+            <span style="font-size:12px;color:rgba(255,255,255,0.35);">CAGE Code</span>
+            <span style="font-size:12px;font-weight:600;color:rgba(255,255,255,0.7);">1CQK6</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,0.07);padding-bottom:8px;">
+            <span style="font-size:12px;color:rgba(255,255,255,0.35);">SAM.gov</span>
+            <span style="font-size:12px;font-weight:600;color:rgba(255,255,255,0.7);">Registered &amp; Active</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;">
+            <span style="font-size:12px;color:rgba(255,255,255,0.35);">Business Type</span>
+            <span style="font-size:12px;font-weight:600;color:rgba(255,255,255,0.7);">Veteran-Owned LLC</span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -269,7 +392,7 @@
       <div class="trust-badge-sub">Active Federal Vendor</div>
     </div>
   </div>
-  <p class="trust-copy">ColeHart Enterprises is a veteran-owned consulting and technology firm committed to mission-driven delivery for federal agencies and enterprise organizations.</p>
+  <p class="trust-copy">ColeHart Enterprises LLC is a veteran-owned small business helping organizations improve operations, adopt technology, and work more effectively serving small businesses, nonprofits, schools, and government buyers.</p>
 </div>
 
 <!-- ── FOOTER ── -->
@@ -301,39 +424,6 @@
       closeMenu()
     }
   })
-
-  // Testimonials carousel
-  ;(function() {
-    var slides = document.querySelectorAll('.testi-slide')
-    var dotsEl = document.getElementById('testi-dots')
-    var current = 0, timer
-
-    slides.forEach(function(_, i) {
-      var d = document.createElement('button')
-      d.className = 'testi-dot' + (i === 0 ? ' active' : '')
-      d.setAttribute('aria-label', 'Testimonial ' + (i + 1))
-      d.addEventListener('click', function() { goTo(i) })
-      dotsEl.appendChild(d)
-    })
-
-    function goTo(n) {
-      slides[current].classList.remove('active')
-      dotsEl.children[current].classList.remove('active')
-      current = (n + slides.length) % slides.length
-      slides[current].classList.add('active')
-      dotsEl.children[current].classList.add('active')
-      resetTimer()
-    }
-
-    function resetTimer() {
-      clearInterval(timer)
-      timer = setInterval(function() { goTo(current + 1) }, 5000)
-    }
-
-    document.getElementById('testi-prev').addEventListener('click', function() { goTo(current - 1) })
-    document.getElementById('testi-next').addEventListener('click', function() { goTo(current + 1) })
-    resetTimer()
-  })()
 </script>
 </body>
 </html>
