@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ColeHart Enterprises — Capability Statement</title>
+<title>Capability Statement — ColeHart Enterprises</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -29,355 +29,331 @@
     padding: 32px 16px;
   }
 
-  /* Print controls (hidden when printing) */
   .print-bar {
-    width: 100%;
-    max-width: 816px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 20px;
-    flex-wrap: wrap;
-    gap: 12px;
+    width: 100%; max-width: 816px;
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 20px; flex-wrap: wrap; gap: 12px;
   }
-  .print-bar-note {
-    font-size: 13px;
-    color: #64748b;
-    line-height: 1.5;
-  }
+  .print-bar-note { font-size: 13px; color: #64748b; line-height: 1.5; }
   .print-bar-note strong { color: #1e293b; }
   .print-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: var(--accent);
-    color: white;
-    border: none;
-    border-radius: 8px;
-    padding: 10px 22px;
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    text-decoration: none;
-    font-family: 'Inter', sans-serif;
-    transition: background 0.15s;
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--accent); color: white; border: none; border-radius: 8px;
+    padding: 10px 22px; font-size: 14px; font-weight: 600; cursor: pointer;
+    text-decoration: none; font-family: 'Inter', sans-serif; transition: background 0.15s;
   }
   .print-btn:hover { background: var(--navy); }
   .back-link {
-    font-size: 13px;
-    color: var(--accent);
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
+    font-size: 13px; color: var(--accent); text-decoration: none;
+    display: inline-flex; align-items: center; gap: 4px;
   }
   .back-link:hover { text-decoration: underline; }
 
-  /* Document sheet */
   .doc {
-    width: 816px;
-    min-height: 1056px;
-    background: white;
+    width: 816px; background: white;
     box-shadow: 0 4px 32px rgba(0,0,0,0.18);
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
+    display: flex; flex-direction: column; overflow: hidden;
   }
 
-  /* Header */
   .doc-header {
-    background: var(--navy2);
-    padding: 32px 40px 28px;
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 24px;
+    background: var(--navy2); padding: 22px 36px 20px;
+    display: flex; align-items: center; justify-content: space-between; gap: 24px;
   }
-  .doc-logo { display: flex; align-items: center; gap: 14px; }
+  .doc-logo { display: flex; align-items: center; gap: 12px; }
   .doc-logo-mark {
-    width: 48px; height: 48px;
-    background: var(--accent);
-    border-radius: 10px;
+    width: 40px; height: 40px; background: var(--accent); border-radius: 8px;
     display: flex; align-items: center; justify-content: center;
-    font-family: 'Playfair Display', serif;
-    font-size: 22px; font-weight: 700; color: white;
-    flex-shrink: 0;
+    font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: white; flex-shrink: 0;
   }
-  .doc-logo-name {
-    font-family: 'Playfair Display', serif;
-    font-size: 20px; font-weight: 700; color: white;
-    line-height: 1.2;
-  }
-  .doc-logo-sub {
-    font-size: 11px; color: rgba(255,255,255,0.45);
-    text-transform: uppercase; letter-spacing: 0.08em;
-    margin-top: 3px;
-  }
+  .doc-logo-name { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 700; color: white; line-height: 1.2; }
+  .doc-logo-sub { font-size: 9.5px; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 3px; }
   .doc-header-right { text-align: right; }
-  .doc-title {
-    font-size: 11px; font-weight: 700;
-    letter-spacing: 0.1em; text-transform: uppercase;
-    color: rgba(255,255,255,0.35); margin-bottom: 4px;
+  .doc-title { font-size: 9.5px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 5px; }
+  .doc-badges { display: flex; gap: 6px; justify-content: flex-end; }
+  .doc-badge {
+    font-size: 8.5px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase;
+    border-radius: 99px; padding: 3px 9px; border: 1px solid;
   }
-  .doc-subtitle {
-    font-size: 13px; color: rgba(255,255,255,0.55); line-height: 1.5;
-  }
+  .doc-badge-vet { color: rgba(255,255,255,0.75); border-color: rgba(255,255,255,0.25); }
+  .doc-badge-sam { color: #4ade80; border-color: rgba(74,222,128,0.3); }
 
-  /* Body */
-  .doc-body { flex: 1; display: flex; flex-direction: column; }
-
-  /* Mission band */
   .doc-mission {
-    background: var(--accent);
-    padding: 14px 40px;
-    font-size: 12px; font-weight: 500; color: white;
-    letter-spacing: 0.01em; line-height: 1.5;
+    background: var(--accent); padding: 10px 36px;
+    font-size: 10.5px; font-weight: 400; color: white; line-height: 1.55;
   }
   .doc-mission strong { font-weight: 700; }
 
-  /* Main content */
   .doc-content {
-    padding: 28px 40px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 32px;
-    flex: 1;
+    padding: 18px 36px 14px; display: grid; grid-template-columns: 1fr 210px; gap: 28px;
   }
 
-  .doc-section { margin-bottom: 24px; }
+  .doc-section { margin-bottom: 14px; }
   .doc-section:last-child { margin-bottom: 0; }
 
   .doc-sec-label {
-    font-size: 9px; font-weight: 700;
-    letter-spacing: 0.12em; text-transform: uppercase;
-    color: var(--accent); margin-bottom: 8px;
-    border-bottom: 1px solid var(--gray3);
-    padding-bottom: 5px;
-  }
-  .doc-sec-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 14px; font-weight: 700;
-    color: var(--navy2); margin-bottom: 10px;
-  }
-  .doc-text {
-    font-size: 11px; font-weight: 300;
-    color: var(--text2); line-height: 1.65;
+    font-size: 8.5px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 6px; border-bottom: 1px solid var(--gray3); padding-bottom: 3px;
   }
 
-  /* Competency list */
-  .cap-list { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+  .doc-text { font-size: 10px; font-weight: 300; color: var(--text2); line-height: 1.6; }
+
+  .cap-mini-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 20px; }
+  .cap-group-name { font-size: 8.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--accent2); margin-bottom: 4px; }
+  .cap-list { list-style: none; display: flex; flex-direction: column; gap: 3px; }
   .cap-list li {
-    display: flex; align-items: flex-start; gap: 8px;
-    font-size: 11px; color: var(--text2); line-height: 1.5;
+    display: flex; align-items: flex-start; gap: 6px;
+    font-size: 9.5px; color: var(--text2); line-height: 1.4;
   }
   .cap-list li::before {
-    content: '';
-    width: 6px; height: 6px;
-    border-radius: 50%;
-    background: var(--accent2);
-    flex-shrink: 0; margin-top: 4px;
+    content: ''; width: 4px; height: 4px; border-radius: 50%;
+    background: var(--accent2); flex-shrink: 0; margin-top: 4px;
+  }
+  .cap-group-full { grid-column: 1 / -1; }
+  .cap-list-inline { list-style: none; display: flex; flex-wrap: wrap; gap: 3px 0; }
+  .cap-list-inline li {
+    display: flex; align-items: flex-start; gap: 6px;
+    font-size: 9.5px; color: var(--text2); line-height: 1.4; width: 50%; padding-right: 8px;
+  }
+  .cap-list-inline li::before {
+    content: ''; width: 4px; height: 4px; border-radius: 50%;
+    background: var(--accent2); flex-shrink: 0; margin-top: 4px;
   }
 
-  /* Differentiators */
-  .diff-list { display: flex; flex-direction: column; gap: 8px; }
-  .diff-item {
-    background: var(--light);
-    border-left: 3px solid var(--accent);
-    border-radius: 0 6px 6px 0;
-    padding: 8px 12px;
-  }
-  .diff-item-title {
-    font-size: 11px; font-weight: 600;
-    color: var(--navy2); margin-bottom: 2px;
-  }
-  .diff-item-text { font-size: 10px; color: var(--text2); line-height: 1.5; }
+  .diff-list { display: flex; flex-direction: column; gap: 4px; }
+  .diff-item { background: var(--light); border-left: 3px solid var(--accent); border-radius: 0 4px 4px 0; padding: 5px 9px; }
+  .diff-item-text { font-size: 9.5px; color: var(--text2); line-height: 1.4; }
 
-  /* NAICS grid */
-  .naics-row {
-    display: flex; align-items: baseline; gap: 10px;
-    padding: 6px 0;
-    border-bottom: 1px solid var(--gray3);
+  .fit-wrap { display: flex; flex-wrap: wrap; gap: 4px; }
+  .fit-tag {
+    font-size: 8.5px; color: var(--text2); background: var(--light);
+    border: 1px solid var(--gray3); border-radius: 99px; padding: 2px 8px;
   }
-  .naics-row:last-child { border-bottom: none; }
-  .naics-num {
-    font-size: 12px; font-weight: 700;
-    color: var(--accent); font-family: 'Inter', monospace;
-    flex-shrink: 0; min-width: 52px;
-  }
-  .naics-desc { font-size: 10px; color: var(--text2); line-height: 1.4; }
 
-  /* Business data table */
   .biz-tbl { width: 100%; border-collapse: collapse; }
-  .biz-tbl td {
-    font-size: 10px; padding: 5px 8px;
-    border-bottom: 1px solid var(--gray3);
-    line-height: 1.4;
-  }
-  .biz-tbl td:first-child {
-    font-weight: 600; color: var(--navy2);
-    white-space: nowrap; width: 38%;
-  }
+  .biz-tbl td { font-size: 9.5px; padding: 3.5px 5px; border-bottom: 1px solid var(--gray3); line-height: 1.35; vertical-align: top; }
+  .biz-tbl td:first-child { font-weight: 600; color: var(--navy2); white-space: nowrap; width: 44%; }
   .biz-tbl td:last-child { color: var(--text2); }
   .biz-tbl tr:last-child td { border-bottom: none; }
 
-  /* Footer */
+  .code-row { display: flex; gap: 6px; margin-bottom: 4px; align-items: flex-start; }
+  .code-row:last-child { margin-bottom: 0; }
+  .code-num { font-size: 9px; font-weight: 700; color: var(--accent); font-family: 'Inter', monospace; flex-shrink: 0; min-width: 34px; }
+  .code-desc { font-size: 9px; font-weight: 300; color: var(--text2); line-height: 1.35; }
+  .code-sub { font-size: 8px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: var(--text2); margin: 5px 0 3px; }
+
   .doc-footer {
-    background: var(--light);
-    border-top: 1px solid var(--gray3);
-    padding: 14px 40px;
-    display: flex; align-items: center; justify-content: space-between;
-    gap: 16px;
+    background: var(--light); border-top: 1px solid var(--gray3); padding: 9px 36px;
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
   }
-  .doc-footer-left { font-size: 10px; color: var(--text2); line-height: 1.5; }
-  .doc-footer-right {
-    display: flex; align-items: center; gap: 16px;
-    flex-shrink: 0;
-  }
-  .doc-contact-item { font-size: 10px; color: var(--text2); }
-  .doc-contact-item a { color: var(--accent); text-decoration: none; }
-  .badge {
+  .doc-footer-left { font-size: 9px; color: var(--text2); }
+  .doc-footer-right { display: flex; align-items: center; gap: 14px; flex-shrink: 0; }
+  .doc-contact-item { font-size: 9px; color: var(--text2); }
+  .vet-badge {
     display: inline-flex; align-items: center; gap: 5px;
-    background: rgba(30,111,168,0.08);
-    border: 1px solid rgba(30,111,168,0.2);
-    border-radius: 99px; padding: 3px 10px;
-    font-size: 9px; font-weight: 700;
-    letter-spacing: 0.06em; text-transform: uppercase;
-    color: var(--accent);
+    background: rgba(30,111,168,0.08); border: 1px solid rgba(30,111,168,0.2);
+    border-radius: 99px; padding: 3px 10px; font-size: 8.5px; font-weight: 700;
+    letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent);
   }
 
-  /* ── PRINT STYLES ── */
   @media print {
     @page { size: letter portrait; margin: 0; }
     body { background: white; padding: 0; display: block; }
     .print-bar { display: none !important; }
-    .doc {
-      width: 100%; min-height: 0;
-      box-shadow: none;
-      page-break-after: avoid;
-    }
+    .doc { width: 100%; box-shadow: none; }
   }
 </style>
 </head>
 <body>
 
-<!-- Print controls -->
 <div class="print-bar">
   <div>
-    <a href="capability.html" class="back-link">← Back to Capability Statement</a>
-    <p class="print-bar-note" style="margin-top:6px;"><strong>To save as PDF:</strong> Click "Print / Save as PDF" → change Destination to "Save as PDF" → Save.</p>
+    <a href="capability.html" class="back-link">← Back to Government Capabilities</a>
+    <p class="print-bar-note" style="margin-top:6px;"><strong>To save as PDF:</strong> Click "Print / Save as PDF" → set Destination to "Save as PDF" → Save.</p>
   </div>
   <button class="print-btn" onclick="window.print()">🖨 Print / Save as PDF</button>
 </div>
 
-<!-- Document -->
 <div class="doc">
 
-  <!-- Header -->
   <div class="doc-header">
     <div class="doc-logo">
-      <img src="../images/logo-print.png" alt="ColeHart Enterprises" style="height:52px;width:auto;display:block;">
+      <div class="doc-logo-mark">C</div>
+      <div>
+        <div class="doc-logo-name">ColeHart Enterprises LLC</div>
+        <div class="doc-logo-sub">South Carolina · colehartenterprises.com</div>
+      </div>
     </div>
     <div class="doc-header-right">
       <div class="doc-title">Capability Statement</div>
-      <div class="doc-subtitle">Federal &amp; Enterprise Consulting<br>Infrastructure · Technology · Operations</div>
+      <div class="doc-badges">
+        <span class="doc-badge doc-badge-vet">Veteran-Owned</span>
+        <span class="doc-badge doc-badge-sam">SAM.gov Active</span>
+      </div>
     </div>
   </div>
 
-  <!-- Mission band -->
   <div class="doc-mission">
-    <strong>Mission:</strong> To empower organizations with innovative solutions that drive efficiency and long-term growth.
+    ColeHart Enterprises LLC is a veteran-owned small business providing <strong>records cleanup, workflow documentation, project admin support, data cleanup, and digital forms support</strong> for government agencies, schools, nonprofits, prime contractors, and small businesses. We help teams organize information, document processes, track deliverables, clean up operational data, and modernize paper or email-based workflows.
   </div>
 
-  <!-- Main content -->
-  <div class="doc-body">
-    <div class="doc-content">
+  <div class="doc-content">
 
-      <!-- Left column -->
-      <div>
+    <!-- LEFT -->
+    <div>
 
-        <div class="doc-section">
-          <div class="doc-sec-label">Company Overview</div>
-          <p class="doc-text">ColeHart Enterprises is a multi-disciplinary consulting and technology firm focused on improving operational performance, infrastructure delivery, and mission readiness for federal agencies and commercial clients. Led by veterans with direct federal program experience at the operational level.</p>
-        </div>
+      <div class="doc-section">
+        <div class="doc-sec-label">Core Capabilities</div>
+        <div class="cap-mini-grid">
 
-        <div class="doc-section">
-          <div class="doc-sec-label">Core Competencies</div>
-          <ul class="cap-list">
-            <li>Program &amp; Project Management Support</li>
-            <li>Federal A/E &amp; Infrastructure Advisory</li>
-            <li>Risk, Schedule, and Cost Analysis</li>
-            <li>Operational Assessments</li>
-            <li>IT &amp; Infrastructure Modernization Strategy and Assessment</li>
-          </ul>
-        </div>
-
-        <div class="doc-section">
-          <div class="doc-sec-label">Differentiators</div>
-          <div class="diff-list">
-            <div class="diff-item">
-              <div class="diff-item-title">Federal Experience — VA &amp; DoD</div>
-              <div class="diff-item-text">Direct program experience inside federal environments, not consultant-adjacent advisory.</div>
-            </div>
-            <div class="diff-item">
-              <div class="diff-item-title">AI Integration with Program Management</div>
-              <div class="diff-item-text">OptiCheck and proprietary AI tools accelerate assessments and deliver structured, repeatable analysis.</div>
-            </div>
-            <div class="diff-item">
-              <div class="diff-item-title">Scalable — Advisory to Implementation</div>
-              <div class="diff-item-text">Engagements right-sized from strategy advisory through full program execution support.</div>
-            </div>
+          <div>
+            <div class="cap-group-name">Records Cleanup</div>
+            <ul class="cap-list">
+              <li>Records inventory &amp; file indexing</li>
+              <li>Shared drive cleanup</li>
+              <li>Folder structure setup</li>
+              <li>Archive organization</li>
+              <li>Scanning coordination</li>
+              <li>Document destruction coordination</li>
+            </ul>
           </div>
-        </div>
 
+          <div>
+            <div class="cap-group-name">Workflow Documentation</div>
+            <ul class="cap-list">
+              <li>Process mapping</li>
+              <li>SOP development</li>
+              <li>Intake workflow review</li>
+              <li>Approval workflow cleanup</li>
+              <li>Checklist creation</li>
+              <li>Handoff documentation</li>
+            </ul>
+          </div>
+
+          <div>
+            <div class="cap-group-name">Project Admin Support</div>
+            <ul class="cap-list">
+              <li>Deliverable tracking</li>
+              <li>Action item logs</li>
+              <li>Meeting notes &amp; status reports</li>
+              <li>Schedule tracking</li>
+              <li>Stakeholder follow-up</li>
+              <li>Project documentation</li>
+            </ul>
+          </div>
+
+          <div>
+            <div class="cap-group-name">Data Cleanup &amp; Reporting</div>
+            <ul class="cap-list">
+              <li>Spreadsheet cleanup</li>
+              <li>Duplicate removal</li>
+              <li>Data formatting &amp; quality review</li>
+              <li>Asset inventory cleanup</li>
+              <li>Reporting templates</li>
+              <li>Dashboard support</li>
+            </ul>
+          </div>
+
+          <div class="cap-group-full">
+            <div class="cap-group-name">Digital Forms Support</div>
+            <ul class="cap-list-inline">
+              <li>Digital intake forms</li>
+              <li>SharePoint lists &amp; request trackers</li>
+              <li>Survey dashboards</li>
+              <li>Accessibility review support</li>
+              <li>Website content updates</li>
+              <li>Simple admin dashboards</li>
+            </ul>
+          </div>
+
+        </div>
       </div>
 
-      <!-- Right column -->
-      <div>
-
-        <div class="doc-section">
-          <div class="doc-sec-label">NAICS Codes</div>
-          <div style="display:flex;flex-wrap:wrap;gap:8px;padding-top:4px;">
-            <div class="naics-num">541611</div>
-            <div class="naics-num">541330</div>
-            <div class="naics-num">541512</div>
-            <div class="naics-num">541519</div>
-            <div class="naics-num">611430</div>
-          </div>
+      <div class="doc-section">
+        <div class="doc-sec-label">Why ColeHart</div>
+        <div class="diff-list">
+          <div class="diff-item"><div class="diff-item-text"><strong>Operations background</strong> — Experience supporting structured, mission-critical operational environments</div></div>
+          <div class="diff-item"><div class="diff-item-text"><strong>Documentation-focused</strong> — We turn scattered information into organized files, trackers, SOPs, and reports</div></div>
+          <div class="diff-item"><div class="diff-item-text"><strong>Flexible support model</strong> — Able to support agencies, prime contractors, and small teams on defined cleanup or admin tasks</div></div>
+          <div class="diff-item"><div class="diff-item-text"><strong>Technology-enabled</strong> — Comfortable using spreadsheets, SharePoint, dashboards, forms, and simple workflow tools</div></div>
         </div>
+      </div>
 
-        <div class="doc-section">
-          <div class="doc-sec-label">Business Data</div>
-          <table class="biz-tbl">
-            <tr><td>Entity Name</td><td><strong>ColeHart Enterprises LLC</strong></td></tr>
-            <tr><td>Business Structure</td><td>Veteran-Owned Small Business</td></tr>
-            <tr><td>Unique Entity ID</td><td>QMEXHNTJYJR3</td></tr>
-            <tr><td>CAGE Code</td><td>1CQK6</td></tr>
-            <tr><td>SAM.gov</td><td>Registered and Active</td></tr>
-            <tr><td>Point of Contact</td><td>Kevin Coleman, CEO</td></tr>
-            <tr><td>Email</td><td>info@colehartenterprises.com</td></tr>
-            <tr><td>Website</td><td>colehartenterprises.com</td></tr>
-          </table>
+      <div class="doc-section">
+        <div class="doc-sec-label">Good Fit For</div>
+        <div class="fit-wrap">
+          <span class="fit-tag">Records management</span>
+          <span class="fit-tag">Document inventory &amp; indexing</span>
+          <span class="fit-tag">Shared drive cleanup</span>
+          <span class="fit-tag">SOP development</span>
+          <span class="fit-tag">Workflow mapping</span>
+          <span class="fit-tag">Admin project support</span>
+          <span class="fit-tag">Deliverable tracking</span>
+          <span class="fit-tag">Data cleanup</span>
+          <span class="fit-tag">Asset inventory support</span>
+          <span class="fit-tag">Digital forms modernization</span>
+          <span class="fit-tag">SharePoint list setup</span>
+          <span class="fit-tag">Survey dashboard support</span>
         </div>
+      </div>
 
-        <div class="doc-section">
-          <div class="doc-sec-label">Past Performance &amp; Clients</div>
-          <p class="doc-text" style="color:#94a3b8;font-style:italic;">Federal agency experience supporting VA and DoD environments. Detailed past performance references available upon request.</p>
-        </div>
+    </div>
 
+    <!-- RIGHT -->
+    <div>
+
+      <div class="doc-section">
+        <div class="doc-sec-label">Business Data</div>
+        <table class="biz-tbl">
+          <tr><td>Entity</td><td><strong>ColeHart Enterprises LLC</strong></td></tr>
+          <tr><td>Type</td><td>Veteran-Owned Small Business</td></tr>
+          <tr><td>Structure</td><td>Single-Member LLC</td></tr>
+          <tr><td>State</td><td>South Carolina</td></tr>
+          <tr><td>UEI</td><td>QMEXHNTJYJR3</td></tr>
+          <tr><td>CAGE</td><td>1CQK6</td></tr>
+          <tr><td>SAM.gov</td><td>Registered &amp; Active</td></tr>
+          <tr><td>Contact</td><td>Kevin Coleman</td></tr>
+          <tr><td>Email</td><td>info@colehartenterprises.com</td></tr>
+          <tr><td>Web</td><td>colehartenterprises.com</td></tr>
+        </table>
+      </div>
+
+      <div class="doc-section">
+        <div class="doc-sec-label">Primary NAICS</div>
+        <div class="code-row"><span class="code-num">541611</span><span class="code-desc">Admin Mgmt &amp; General Management Consulting</span></div>
+        <div class="code-row"><span class="code-num">561110</span><span class="code-desc">Office Administrative Services</span></div>
+        <div class="code-row"><span class="code-num">561499</span><span class="code-desc">All Other Business Support Services</span></div>
+        <div class="code-sub">Secondary NAICS</div>
+        <div class="code-row"><span class="code-num">541512</span><span class="code-desc">Computer Systems Design Services</span></div>
+        <div class="code-row"><span class="code-num">541519</span><span class="code-desc">Other Computer Related Services</span></div>
+        <div class="code-row"><span class="code-num">541511</span><span class="code-desc">Custom Computer Programming Services</span></div>
+        <div class="code-row"><span class="code-num">518210</span><span class="code-desc">Computing Infrastructure &amp; Web Hosting</span></div>
+      </div>
+
+      <div class="doc-section">
+        <div class="doc-sec-label">PSC Codes</div>
+        <div class="code-row"><span class="code-num">R408</span><span class="code-desc">Program Management / Support Services</span></div>
+        <div class="code-row"><span class="code-num">R410</span><span class="code-desc">Program Evaluation / Review / Development</span></div>
+        <div class="code-row"><span class="code-num">R499</span><span class="code-desc">Other Professional Services</span></div>
+        <div class="code-row"><span class="code-num">R607</span><span class="code-desc">Admin Word Processing Support</span></div>
+        <div class="code-row"><span class="code-num">R699</span><span class="code-desc">Other Administrative Support Services</span></div>
+        <div class="code-row"><span class="code-num">DA01</span><span class="code-desc">Business Application Development</span></div>
+        <div class="code-row"><span class="code-num">DB02</span><span class="code-desc">Compute / Storage Support</span></div>
+        <div class="code-row"><span class="code-num">DG01</span><span class="code-desc">Network Support Services</span></div>
+      </div>
+
+      <div class="doc-section">
+        <div class="doc-sec-label">Prime / Teaming</div>
+        <p class="doc-text">Available as a small business teaming partner for records cleanup, workflow documentation, admin project support, data cleanup, and digital forms support. Contact us to discuss subcontracting or teaming opportunities.</p>
       </div>
 
     </div>
   </div>
 
-  <!-- Footer -->
   <div class="doc-footer">
-    <div class="doc-footer-left">
-      © 2026 ColeHart Enterprises LLC · Spartanburg, SC &amp; Austin, TX
-    </div>
+    <div class="doc-footer-left">© 2026 ColeHart Enterprises LLC · South Carolina · colehartenterprises.com</div>
     <div class="doc-footer-right">
-      <div class="doc-contact-item"><a href="mailto:info@colehartenterprises.com">info@colehartenterprises.com</a></div>
-      <div class="doc-contact-item"><a href="https://colehartenterprises.com">colehartenterprises.com</a></div>
-      <div class="badge">Veteran-Owned</div>
+      <div class="doc-contact-item">UEI: QMEXHNTJYJR3 · CAGE: 1CQK6</div>
+      <span class="vet-badge">Veteran-Owned</span>
     </div>
   </div>
 
